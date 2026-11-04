@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquis Ayizo · Restaurant à Cotonou (démo)</title>
+<meta name="description" content="Démo : restaurant fictif à Cotonou, menu en FCFA, horaires en direct et commande par WhatsApp.">
+<style>
+:root{--bg:#fff8ef;--ink:#2a1a10;--mute:#7a6455;--acc:#c2410c;--acc2:#15803d;--card:#fff;--line:#eedfcd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:13px;padding:6px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.5px}.logo span{color:var(--acc)}
+nav a{text-decoration:none;margin-left:20px;font-weight:600;font-size:15px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 60px}
+.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-1.5px}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{color:var(--mute);font-size:18px;margin:18px 0 26px;max-width:46ch}
+.status{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-weight:600;font-size:14px;margin-bottom:18px}
+.dot{width:10px;height:10px;border-radius:50%;background:#aaa}.open .dot{background:var(--acc2);box-shadow:0 0 0 4px #15803d22}.closed .dot{background:#dc2626}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:12px;border:0;cursor:pointer;font-size:16px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:10px}
+.plate{aspect-ratio:1;border-radius:32px;background:radial-gradient(circle at 35% 35%,#fbbf24,#ea580c 55%,#7c2d12);display:grid;place-items:center;font-size:150px;box-shadow:0 30px 60px -20px #7c2d1288}
+section{padding:60px 0}
+h2{font-size:34px;letter-spacing:-1px;margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:28px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{border:1px solid var(--line);background:#fff;padding:8px 16px;border-radius:99px;font-weight:600;cursor:pointer;font-size:14px}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.dish{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center}
+.dish .em{font-size:38px;width:60px;height:60px;display:grid;place-items:center;background:var(--bg);border-radius:14px;flex:none}
+.dish h3{font-size:17px}.dish p{color:var(--mute);font-size:14px}
+.dish .price{margin-left:auto;text-align:right;flex:none}
+.dish .price b{display:block;font-size:16px;white-space:nowrap}
+.add{margin-top:6px;border:0;background:var(--acc);color:#fff;border-radius:8px;width:32px;height:32px;font-size:20px;cursor:pointer}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+td{padding:12px 18px;border-bottom:1px solid var(--line)}tr:last-child td{border:0}
+tr.today{background:#fff1e6;font-weight:700}
+.info p{margin-bottom:12px}
+.resa{background:var(--ink);color:#fff;border-radius:24px;padding:36px}
+.resa label{display:block;font-size:13px;opacity:.8;margin:12px 0 4px}
+.resa input,.resa select{width:100%;padding:12px;border-radius:10px;border:0;font-size:15px}
+.resa .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.resa .btn{margin-top:20px;width:100%}
+.cart{position:fixed;right:20px;bottom:20px;background:var(--acc2);color:#fff;border-radius:16px;padding:14px 20px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px #0004;display:none}
+.cart.show{display:block}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:14px;text-align:center}
+@media(max-width:760px){.hero,.hours{grid-template-columns:1fr}.plate{font-size:100px;max-width:320px}nav{display:none}.resa .row{grid-template-columns:1fr}.btn.ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<div class="demo">Site de démonstration · entreprise fictive</div>
+<div class="wrap">
+  <header><div class="logo">Maquis <span>Ayizo</span></div><nav><a href="#menu">Menu</a><a href="#horaires">Horaires</a><a href="#reserver">Réserver</a></nav></header>
+  <div class="hero">
+    <div>
+      <div class="status" id="status"><span class="dot"></span><span id="statusTxt">…</span></div>
+      <h1>La vraie cuisine béninoise, <em>servie chaude</em> à Cotonou.</h1>
+      <p>Amiwo, poisson braisé, sauce gombo, aloko… Commandez en deux clics sur WhatsApp ou réservez votre table pour ce soir.</p>
+      <a class="btn" href="#menu">Voir le menu</a><a class="btn ghost" href="#reserver">Réserver</a>
+    </div>
+    <div class="plate" aria-hidden="true">🍲</div>
+  </div>
+</div>
+
+<section id="menu"><div class="wrap">
+  <h2>Le menu</h2><p class="sub">Prix en FCFA. Touchez + pour ajouter un plat à votre commande.</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="menu" id="plats"></div>
+</div></section>
+
+<section id="horaires" style="background:#fff"><div class="wrap hours">
+  <div><h2>Horaires</h2><p class="sub">Mis à jour en temps réel.</p><table id="table"></table></div>
+  <div class="info"><h2>Nous trouver</h2><p class="sub">Haie Vive, Cotonou · à 2 min du carrefour.</p>
+    <p>📍 Rue 12.045, Haie Vive, Cotonou</p><p>📞 01 40 77 88 06</p><p>🛵 Livraison dans tout Cotonou à partir de 1 000 FCFA</p><p>💳 Espèces, MTN MoMo, Moov Money</p></div>
+</div></section>
+
+<section id="reserver"><div class="wrap">
+  <form class="resa" id="resa">
+    <h2>Réserver une table</h2><p style="opacity:.8">Votre demande part directement sur notre WhatsApp.</p>
+    <label for="nom">Votre nom</label><input id="nom" required placeholder="Ex. Koffi">
+    <div class="row">
+      <div><label for="jour">Date</label><input id="jour" type="date" required></div>
+      <div><label for="heure">Heure</label><select id="heure"><option>12:00</option><option>13:00</option><option>19:00</option><option>20:00</option><option>21:00</option></select></div>
+      <div><label for="pers">Personnes</label><select id="pers"><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
+    </div>
+    <button class="btn" type="submit">Envoyer sur WhatsApp</button>
+  </form>
+</div></section>
+
+<footer>© <span id="an"></span> Maquis Ayizo · démo réalisée par Wafik Adouko</footer>
+<a class="cart" id="cart" target="_blank" rel="noopener"></a>
+
+<script>
+const WA = "2290140778806";
+const PLATS = [
+  {c:"Plats",n:"Poisson braisé",d:"Daurade entière, piment frais, oignons",p:4500,e:"🐟"},
+  {c:"Plats",n:"Amiwo au poulet",d:"Pâte rouge, poulet bicyclette",p:3000,e:"🍗"},
+  {c:"Plats",n:"Sauce gombo & akassa",d:"Viande de bœuf, crevettes séchées",p:2500,e:"🥘"},
+  {c:"Plats",n:"Riz au gras",d:"Riz parfumé, légumes, viande",p:2000,e:"🍛"},
+  {c:"Accompagnements",n:"Aloko",d:"Bananes plantains frites",p:1000,e:"🍌"},
+  {c:"Accompagnements",n:"Attiéké",d:"Semoule de manioc",p:800,e:"🍚"},
+  {c:"Boissons",n:"Bissap maison",d:"Fleurs d'hibiscus, menthe",p:700,e:"🍹"},
+  {c:"Boissons",n:"Jus de baobab",d:"Bouye frais",p:800,e:"🥤"},
+];
+const HORAIRES = [["Dimanche",12,22],["Lundi",null],["Mardi",11,23],["Mercredi",11,23],["Jeudi",11,23],["Vendredi",11,24],["Samedi",11,24]];
+const fcfa = n => n.toLocaleString("fr-FR").replace(/ /g," ") + " FCFA";
+const panier = {};
+
+const cats = ["Tout", ...new Set(PLATS.map(p => p.c))];
+const tabs = document.getElementById("tabs");
+function afficher(cat) {
+  tabs.innerHTML = cats.map(c => `<button class="${c===cat?"on":""}" data-c="${c}">${c}</button>`).join("");
+  document.getElementById("plats").innerHTML = PLATS.map((p,i) => (cat==="Tout"||p.c===cat) ? `
+    <div class="dish"><div class="em">${p.e}</div><div><h3>${p.n}</h3><p>${p.d}</p></div>
+    <div class="price"><b>${fcfa(p.p)}</b><button class="add" data-i="${i}" aria-label="Ajouter ${p.n}">+</button></div></div>` : "").join("");
+}
+tabs.addEventListener("click", e => e.target.dataset.c && afficher(e.target.dataset.c));
+document.getElementById("plats").addEventListener("click", e => {
+  const i = e.target.dataset.i; if (i === undefined) return;
+  panier[i] = (panier[i] || 0) + 1; majPanier();
+});
+function majPanier() {
+  const lignes = Object.entries(panier), total = lignes.reduce((s,[i,q]) => s + PLATS[i].p*q, 0);
+  const cart = document.getElementById("cart");
+  cart.classList.toggle("show", lignes.length > 0);
+  cart.textContent = `🛒 Commander · ${fcfa(total)}`;
+  const msg = "Bonjour Maquis Ayizo, je voudrais commander :\n" + lignes.map(([i,q]) => `- ${q} × ${PLATS[i].n}`).join("\n") + `\nTotal : ${fcfa(total)}`;
+  cart.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+afficher("Tout");
+
+const now = new Date(), j = now.getDay(), h = now.getHours() + now.getMinutes()/60, [,o,f] = HORAIRES[j];
+const ouvert = o !== null && h >= o && h < f;
+const st = document.getElementById("status");
+st.classList.add(ouvert ? "open" : "closed");
+document.getElementById("statusTxt").textContent = ouvert ? `Ouvert maintenant · jusqu'à ${f===24?"minuit":f+"h"}` : "Fermé pour le moment";
+document.getElementById("table").innerHTML = [1,2,3,4,5,6,0].map(d => { const [n,a,b] = HORAIRES[d];
+  return `<tr class="${d===j?"today":""}"><td>${n}${d===j?" (aujourd'hui)":""}</td><td style="text-align:right">${a===null?"Fermé":`${a}h – ${b===24?"minuit":b+"h"}`}</td></tr>`; }).join("");
+
+const jour = document.getElementById("jour"); jour.valueAsDate = now; jour.min = jour.value;
+document.getElementById("resa").addEventListener("submit", e => {
+  e.preventDefault();
+  const msg = `Bonjour, je souhaite réserver une table au nom de ${nom.value} le ${new Date(jour.value).toLocaleDateString("fr-FR")} à ${heure.value} pour ${pers.value} personnes.`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+});
+document.getElementById("an").textContent = now.getFullYear();
+</script>
+</body>
+</html>

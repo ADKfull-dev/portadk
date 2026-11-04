@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaba Mode · Boutique en ligne (démo)</title>
+<meta name="description" content="Démo : boutique de mode fictive, catalogue filtrable, panier et commande par WhatsApp.">
+<style>
+:root{--bg:#f6f6f3;--ink:#111;--mute:#6b6b66;--acc:#0f766e;--line:#e4e4de}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.demo{background:var(--acc);color:#fff;text-align:center;font-size:13px;padding:6px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.logo{font-weight:900;font-size:24px;letter-spacing:3px}
+.cartbtn{background:var(--ink);color:#fff;border:0;border-radius:99px;padding:10px 18px;font-weight:700;cursor:pointer;font-size:15px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;padding:50px 0}
+.hero h1{font-size:clamp(36px,5.5vw,64px);line-height:1;letter-spacing:-2px;font-weight:900}
+.hero p{color:var(--mute);font-size:18px;margin:18px 0 0;max-width:42ch}
+.heroimg{aspect-ratio:4/3;border-radius:24px;background:repeating-linear-gradient(45deg,#f59e0b 0 22px,#0f766e 22px 44px,#dc2626 44px 66px,#111 66px 88px);position:relative;overflow:hidden}
+.heroimg span{position:absolute;bottom:18px;left:18px;background:#fff;padding:8px 14px;border-radius:99px;font-weight:700;font-size:14px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;padding:10px 0 24px}
+.filters button{border:1px solid var(--line);background:#fff;padding:9px 18px;border-radius:99px;font-weight:600;cursor:pointer;font-size:14px}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;padding-bottom:60px}
+.prod{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.prod .img{aspect-ratio:1;display:grid;place-items:center;font-size:80px}
+.prod .b{padding:14px 16px 16px}
+.prod small{color:var(--mute);text-transform:uppercase;font-size:11px;letter-spacing:1px;font-weight:700}
+.prod h3{font-size:16px;margin:2px 0 8px}
+.prod .row{display:flex;justify-content:space-between;align-items:center}
+.prod button{background:var(--acc);color:#fff;border:0;border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:#fff;box-shadow:-10px 0 40px #0003;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;z-index:10}
+.drawer.open{transform:none}
+.drawer header{padding:20px}
+.lines{flex:1;overflow:auto;padding:0 20px}
+.line{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);gap:10px}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:16px}
+.foot{padding:20px;border-top:1px solid var(--line)}
+.total{display:flex;justify-content:space-between;font-size:18px;font-weight:800;margin-bottom:14px}
+.order{display:block;width:100%;text-align:center;background:#16a34a;color:#fff;text-decoration:none;padding:15px;border-radius:14px;font-weight:800}
+.order.off{pointer-events:none;opacity:.4}
+.x{background:none;border:0;font-size:26px;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:14px;text-align:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo">Site de démonstration · entreprise fictive</div>
+<div class="wrap">
+  <header><div class="logo">KABA</div><button class="cartbtn" id="openCart">Panier (<span id="count">0</span>)</button></header>
+  <div class="hero">
+    <div><h1>Le wax, version moderne.</h1><p>Chemises, robes et accessoires cousus à Cotonou. Ajoutez vos articles au panier et envoyez la commande sur WhatsApp, livraison en 24 h.</p></div>
+    <div class="heroimg" aria-hidden="true"><span>Nouvelle collection</span></div>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</div>
+<footer>© <span id="an"></span> Kaba Mode · démo réalisée par Wafik Adouko</footer>
+
+<aside class="drawer" id="drawer" aria-label="Panier">
+  <header><b style="font-size:20px">Votre panier</b><button class="x" id="closeCart" aria-label="Fermer">×</button></header>
+  <div class="lines" id="lines"></div>
+  <div class="foot"><div class="total"><span>Total</span><span id="total">0 FCFA</span></div><a class="order off" id="order" target="_blank" rel="noopener">Commander sur WhatsApp</a></div>
+</aside>
+
+<script>
+const WA = "2290140778806";
+const PRODUITS = [
+  {c:"Homme",n:"Chemise wax Atlantique",p:12000,e:"👔",bg:"#fde68a"},
+  {c:"Femme",n:"Robe portefeuille Ganvié",p:18000,e:"👗",bg:"#fecaca"},
+  {c:"Femme",n:"Jupe crayon Dantokpa",p:9500,e:"🩱",bg:"#c7d2fe"},
+  {c:"Homme",n:"Ensemble Bomboli",p:22000,e:"🥻",bg:"#bbf7d0"},
+  {c:"Accessoires",n:"Sac cabas en pagne",p:7000,e:"👜",bg:"#fed7aa"},
+  {c:"Accessoires",n:"Foulard tête Zangbéto",p:3500,e:"🧣",bg:"#fbcfe8"},
+  {c:"Femme",n:"Top bustier Ouidah",p:8000,e:"👚",bg:"#a5f3fc"},
+  {c:"Accessoires",n:"Sandales cuir Abomey",p:11000,e:"👡",bg:"#e9d5ff"},
+];
+const fcfa = n => n.toLocaleString("fr-FR").replace(/ /g," ") + " FCFA";
+const panier = {};
+const cats = ["Tout", ...new Set(PRODUITS.map(p => p.c))];
+
+function filtrer(cat) {
+  document.getElementById("filters").innerHTML = cats.map(c => `<button class="${c===cat?"on":""}" data-c="${c}">${c}</button>`).join("");
+  document.getElementById("grid").innerHTML = PRODUITS.map((p,i) => (cat==="Tout"||p.c===cat) ? `
+    <div class="prod"><div class="img" style="background:${p.bg}">${p.e}</div><div class="b"><small>${p.c}</small><h3>${p.n}</h3>
+    <div class="row"><b>${fcfa(p.p)}</b><button data-i="${i}">Ajouter</button></div></div></div>` : "").join("");
+}
+document.getElementById("filters").onclick = e => e.target.dataset.c && filtrer(e.target.dataset.c);
+document.getElementById("grid").onclick = e => { const i = e.target.dataset.i; if (i === undefined) return; panier[i] = (panier[i]||0) + 1; maj(); ouvrir(true); };
+document.getElementById("lines").onclick = e => { const i = e.target.dataset.i; if (i === undefined) return; panier[i] += +e.target.dataset.d; if (panier[i] <= 0) delete panier[i]; maj(); };
+
+function maj() {
+  const l = Object.entries(panier), total = l.reduce((s,[i,q]) => s + PRODUITS[i].p*q, 0);
+  document.getElementById("count").textContent = l.reduce((s,[,q]) => s+q, 0);
+  document.getElementById("total").textContent = fcfa(total);
+  document.getElementById("lines").innerHTML = l.length ? l.map(([i,q]) => `<div class="line"><div>${PRODUITS[i].n}<br><small>${fcfa(PRODUITS[i].p)}</small></div>
+    <div class="qty"><button data-i="${i}" data-d="-1" aria-label="Retirer">−</button>${q}<button data-i="${i}" data-d="1" aria-label="Ajouter">+</button></div></div>`).join("")
+    : '<p style="padding:20px 0;color:#6b6b66">Votre panier est vide.</p>';
+  const order = document.getElementById("order");
+  order.classList.toggle("off", !l.length);
+  order.href = `https://wa.me/${WA}?text=${encodeURIComponent("Bonjour Kaba Mode, je souhaite commander :\n" + l.map(([i,q]) => `- ${q} × ${PRODUITS[i].n} (${fcfa(PRODUITS[i].p*q)})`).join("\n") + `\nTotal : ${fcfa(total)}`)}`;
+}
+const ouvrir = v => document.getElementById("drawer").classList.toggle("open", v);
+document.getElementById("openCart").onclick = () => ouvrir(true);
+document.getElementById("closeCart").onclick = () => ouvrir(false);
+filtrer("Tout"); maj();
+document.getElementById("an").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Nafi · Salon de coiffure (démo)</title>
+<meta name="description" content="Démo : salon de coiffure fictif, tarifs et réservation en 3 clics sur WhatsApp.">
+<style>
+:root{--bg:#fbf7f4;--ink:#1f1720;--mute:#7b6e78;--acc:#9d174d;--soft:#fce7f3;--line:#eee2e8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,"Times New Roman",serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.sans,button,input,select,.demo,nav,.btn,label{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:13px;padding:6px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-size:26px;font-style:italic}.logo b{color:var(--acc);font-style:normal}
+nav a{text-decoration:none;color:inherit;margin-left:22px;font-size:15px}
+.hero{text-align:center;padding:60px 0 70px}
+.hero small{font-family:system-ui,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--acc);font-size:13px;font-weight:700}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.05;font-weight:400;margin:16px auto;max-width:14ch}
+.hero h1 i{color:var(--acc)}
+.hero p{color:var(--mute);font-size:19px;max-width:50ch;margin:0 auto 30px}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:99px;border:0;cursor:pointer;font-size:16px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:50px}
+.gal div{aspect-ratio:3/4;border-radius:20px;display:grid;place-items:center;font-size:64px}
+section{padding:60px 0}
+h2{font-size:38px;font-weight:400;margin-bottom:6px}
+.sub{color:var(--mute);margin-bottom:30px;font-family:system-ui,sans-serif}
+.prix{display:grid;grid-template-columns:1fr 1fr;gap:0 50px}
+.prix div{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px dashed var(--line);gap:12px}
+.prix span{color:var(--mute);font-size:14px;font-family:system-ui,sans-serif;display:block}
+.prix b{font-family:system-ui,sans-serif;white-space:nowrap}
+.book{background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px;box-shadow:0 30px 60px -30px #9d174d33}
+.steps{display:flex;gap:10px;margin-bottom:26px;font-family:system-ui,sans-serif;font-size:14px;flex-wrap:wrap}
+.steps span{padding:6px 14px;border-radius:99px;background:var(--bg);color:var(--mute)}
+.steps span.on{background:var(--acc);color:#fff}
+.step h3{font-weight:400;font-size:24px;margin-bottom:14px}
+.choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:26px}
+.choices button{padding:14px;border-radius:14px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:15px;text-align:left}
+.choices button small{display:block;color:var(--mute);font-size:13px}
+.choices button.on{border-color:var(--acc);background:var(--soft);font-weight:700}
+.recap{background:var(--soft);border-radius:16px;padding:16px 20px;font-family:system-ui,sans-serif;margin-bottom:20px}
+footer{padding:30px 0;color:var(--mute);font-size:14px;text-align:center;font-family:system-ui,sans-serif}
+@media(max-width:760px){.prix{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}nav{display:none}.book{padding:22px}}
+</style>
+</head>
+<body>
+<div class="demo">Site de démonstration · entreprise fictive</div>
+<div class="wrap">
+  <header><div class="logo">Studio <b>Nafi</b></div><nav><a href="#tarifs">Tarifs</a><a href="#rdv">Rendez-vous</a></nav></header>
+  <div class="hero">
+    <small>Salon de coiffure · Cotonou</small>
+    <h1>Vos tresses, <i>sans attendre</i>.</h1>
+    <p>Tresses, locks, soins et coupes. Choisissez votre prestation, votre jour et votre heure : le rendez-vous est confirmé sur WhatsApp.</p>
+    <a class="btn" href="#rdv">Prendre rendez-vous</a>
+    <div class="gal" aria-hidden="true">
+      <div style="background:linear-gradient(160deg,#fbcfe8,#be185d)">💇🏾‍♀️</div>
+      <div style="background:linear-gradient(160deg,#fde68a,#b45309)">✨</div>
+      <div style="background:linear-gradient(160deg,#ddd6fe,#6d28d9)">💆🏾‍♀️</div>
+      <div style="background:linear-gradient(160deg,#bbf7d0,#047857)">🌿</div>
+    </div>
+  </div>
+</div>
+
+<section id="tarifs" style="background:#fff"><div class="wrap">
+  <h2>Tarifs</h2><p class="sub">Prix indicatifs en FCFA, mèches non comprises.</p>
+  <div class="prix" id="prix"></div>
+</div></section>
+
+<section id="rdv"><div class="wrap">
+  <h2>Rendez-vous en 3 clics</h2><p class="sub">Aucun compte à créer.</p>
+  <div class="book">
+    <div class="steps"><span id="s1" class="on">1. Prestation</span><span id="s2">2. Jour</span><span id="s3">3. Heure</span></div>
+    <div class="step"><h3>Quelle prestation ?</h3><div class="choices" id="cPresta"></div></div>
+    <div class="step"><h3>Quel jour ?</h3><div class="choices" id="cJour"></div></div>
+    <div class="step"><h3>Quelle heure ?</h3><div class="choices" id="cHeure"></div></div>
+    <div class="recap" id="recap">Choisissez une prestation, un jour et une heure.</div>
+    <button class="btn" id="go" disabled>Confirmer sur WhatsApp</button>
+  </div>
+</div></section>
+
+<footer>© <span id="an"></span> Studio Nafi · démo réalisée par Wafik Adouko</footer>
+
+<script>
+const WA = "2290140778806";
+const PRESTAS = [
+  {n:"Tresses box braids",d:"3 à 4 h",p:15000},{n:"Nattes collées",d:"1 h 30",p:5000},
+  {n:"Locks (entretien)",d:"2 h",p:8000},{n:"Coupe homme",d:"30 min",p:2000},
+  {n:"Soin profond",d:"1 h",p:6000},{n:"Brushing",d:"45 min",p:4000},
+];
+const HEURES = ["09:00","10:30","12:00","14:00","15:30","17:00"];
+const fcfa = n => n.toLocaleString("fr-FR").replace(/ /g," ") + " FCFA";
+const choix = {};
+
+document.getElementById("prix").innerHTML = PRESTAS.map(p => `<div><p>${p.n}<span>${p.d}</span></p><b>${fcfa(p.p)}</b></div>`).join("");
+
+const jours = [...Array(6)].map((_,i) => { const d = new Date(); d.setDate(d.getDate()+i+1); return d; }).filter(d => d.getDay() !== 0);
+const fmt = d => d.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});
+function rendre(id, items, key, label) {
+  const el = document.getElementById(id);
+  el.innerHTML = items.map((x,i) => `<button data-i="${i}" class="${choix[key]===i?"on":""}">${label(x)}</button>`).join("");
+  el.onclick = e => { const b = e.target.closest("button"); if (!b) return; choix[key] = +b.dataset.i; tout(); };
+}
+function tout() {
+  rendre("cPresta", PRESTAS, "p", p => `${p.n}<small>${fcfa(p.p)}</small>`);
+  rendre("cJour", jours, "j", d => fmt(d).replace(/^\w/, c => c.toUpperCase()));
+  rendre("cHeure", HEURES, "h", h => h.replace(":", "h"));
+  const ok = ["p","j","h"].map(k => choix[k] !== undefined);
+  ok.forEach((v,i) => document.getElementById("s"+(i+1)).classList.toggle("on", v || (i===0) || ok[i-1]));
+  const btn = document.getElementById("go");
+  btn.disabled = !ok.every(Boolean);
+  if (!btn.disabled) {
+    const p = PRESTAS[choix.p];
+    document.getElementById("recap").innerHTML = `<b>${p.n}</b> · ${fmt(jours[choix.j])} à ${HEURES[choix.h].replace(":","h")} · ${fcfa(p.p)}`;
+  }
+}
+document.getElementById("go").onclick = () => {
+  const p = PRESTAS[choix.p];
+  const msg = `Bonjour Studio Nafi, je souhaite un rendez-vous :\n- ${p.n} (${fcfa(p.p)})\n- ${fmt(jours[choix.j])} à ${HEURES[choix.h].replace(":","h")}\nMerci de confirmer.`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+};
+tout();
+document.getElementById("an").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

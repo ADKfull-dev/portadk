@@ -10,7 +10,7 @@ const PROFIL = {
   telephone: "01 40 77 88 06",
   telephoneInternational: "+229 01 40 77 88 06",
   email: "adoukowafik@gmail.com",
-  github: "https://github.com/adoukowafik-cloud",
+  github: "https://github.com/ADKfull-dev",
   messageWhatsapp: "Bonjour Wafik, je souhaite un site web pour mon entreprise.",
   annee: new Date().getFullYear(),
 };
