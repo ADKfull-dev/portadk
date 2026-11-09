@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinique Azalée · Santé à Cotonou (démo)</title>
+<meta name="description" content="Démo ATLANTIK WEB : site premium de clinique à Cotonou, prise de rendez-vous WhatsApp, spécialités, médecins, urgences.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&q=75&auto=format&fit=crop">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../premium/base.css">
+<style>
+:root{--fh:"DM Serif Display",Georgia,serif;--fw:400;--ls:-.01em;--fb:"DM Sans",system-ui,sans-serif;--bg:#f6faf8;--bg2:#e8f2ee;--ink:#0c2b29;--mute:#557170;--acc:#0f6b62;--acc2:#ffc97a;--card:#fff;--line:#d9e7e2;--rcard:28px;--hero-grad:linear-gradient(90deg,#062220ee 0%,#06222099 45%,#06222011 100%)}
+.hero{align-items:center}
+.hero h1 em{font-style:italic;color:var(--acc2)}
+.doc .ph{aspect-ratio:3/3.4}
+.doc .sp{color:var(--acc);font-weight:700;font-size:14px}
+.urg{background:#c2410c;border-color:#c2410c}
+.live{display:inline-flex;align-items:center;gap:8px;background:#ffffff1f;border:1px solid #ffffff33;padding:7px 14px;border-radius:99px;font-size:14px;font-weight:600;margin-bottom:18px}
+.live i{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px #4ade8033}
+</style>
+</head>
+<body data-wa="2290142128262" data-nom="Clinique Azalée">
+<div class="demo-bar">Site de démonstration réalisé par <b>ATLANTIK WEB</b> · clinique fictive · photos Unsplash</div>
+
+<header class="top over"><div class="wrap in">
+  <a href="#" class="logo"><span class="mk" style="border-radius:50%">✚</span>Clinique Azalée</a>
+  <nav class="menu"><a href="#services">Spécialités</a><a href="#medecins">Médecins</a><a href="#rdv">Rendez-vous</a><a href="#urgences">Urgences</a></nav>
+  <a href="#rdv" class="btn light cta-nav">Prendre rendez-vous</a>
+  <button class="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<section class="hero">
+  <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=2000&q=75&auto=format&fit=crop);background-position:70% 20%"></div>
+  <div class="wrap"><div class="grid2" style="align-items:center">
+    <div class="reveal">
+      <span class="live"><i></i>Ouvert maintenant · urgences 24 h/24</span>
+      <h1>Des soins de qualité, <em>sans attendre.</em></h1>
+      <p class="lead">Médecine générale, pédiatrie, maternité et laboratoire au même endroit, à Cotonou. Rendez-vous le jour même, résultats d'analyses envoyés sur WhatsApp.</p>
+      <div class="ctas"><a href="#rdv" class="btn light">Prendre rendez-vous</a><a href="tel:+2290100000000" class="btn ghost">📞 Appeler la clinique</a></div>
+    </div>
+    <form class="widget reveal d2" id="rdv" data-wa="je souhaite prendre rendez-vous.">
+      <h3>Rendez-vous en 1 minute</h3>
+      <div class="field"><label>Spécialité</label><select data-label="Spécialité"><option>Médecine générale</option><option>Pédiatrie</option><option>Gynécologie – maternité</option><option>Laboratoire d'analyses</option><option>Échographie</option><option>Soins dentaires</option></select></div>
+      <div class="row2"><div class="field"><label>Date</label><input type="date" required data-label="Date"></div><div class="field"><label>Moment</label><select data-label="Moment"><option>Matin</option><option>Après-midi</option><option>Soir</option></select></div></div>
+      <div class="field"><label>Nom du patient</label><input required data-label="Patient" placeholder="Ex. M. Dossou"></div>
+      <button class="btn">Confirmer sur WhatsApp →</button>
+    </form>
+  </div></div>
+</section>
+
+<div class="trust"><div class="wrap in">
+  <span>🕐 <b>7j/7</b> · urgences 24 h/24</span><span>🧪 Laboratoire <b>sur place</b></span><span>🛡️ Assurances <b>acceptées</b></span><span>📲 Résultats <b>sur WhatsApp</b></span>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Nos spécialités</span><h2>Toute la famille soignée au même endroit.</h2><p>Une équipe de médecins et de sages-femmes expérimentés, des équipements modernes et un accueil humain.</p></div>
+  <div class="cards">
+    <div class="icard reveal"><div class="ic">🩺</div><h3>Médecine générale</h3><p>Consultations, bilans de santé, suivi du diabète et de l'hypertension.</p></div>
+    <div class="icard reveal d1"><div class="ic">👶</div><h3>Pédiatrie</h3><p>Suivi de croissance, vaccinations et consultations d'enfants de 0 à 15 ans.</p></div>
+    <div class="icard reveal d2"><div class="ic">🤰</div><h3>Maternité</h3><p>Suivi de grossesse, échographies, accouchement et salle de réveil climatisée.</p></div>
+    <div class="icard reveal"><div class="ic">🧪</div><h3>Laboratoire</h3><p>Analyses de sang, paludisme, glycémie : résultats en quelques heures.</p></div>
+    <div class="icard reveal d1"><div class="ic">📡</div><h3>Imagerie</h3><p>Échographie et radiographie numériques, comptes rendus rapides.</p></div>
+    <div class="icard reveal d2"><div class="ic">🦷</div><h3>Soins dentaires</h3><p>Détartrage, soins des caries, extractions et blanchiment.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap split">
+  <div class="img reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1749065312519-1902cb8431ae?w=1100&q=75&auto=format&fit=crop" alt="Équipe médicale">
+    <div class="float"><span style="font-size:30px">⭐</span><div><b>4,9 / 5</b><br>sur plus de 300 avis Google</div></div></div>
+  <div class="reveal d1"><span class="eyebrow">Pourquoi nous choisir</span>
+    <h2 style="font-size:clamp(32px,4vw,52px);margin:16px 0">Une clinique pensée pour les patients.</h2>
+    <ul class="checks"><li><div><b>Moins d'attente</b> — rendez-vous à l'heure, file prioritaire pour les enfants et les femmes enceintes.</div></li><li><div><b>Tarifs affichés</b> — vous connaissez le prix avant la consultation.</div></li><li><div><b>Suivi à distance</b> — ordonnances et résultats envoyés sur WhatsApp, rappel des vaccins.</div></li></ul>
+    <a href="#rdv" class="btn">Réserver une consultation</a></div>
+</div></section>
+
+<section id="medecins"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Notre équipe</span><h2>Des médecins qui prennent le temps.</h2></div>
+  <div class="cards">
+    <article class="card doc reveal"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1678695972687-033fa0bdbac9?w=700&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="sp">Gynécologie – obstétrique</span><h3>Dr A. Kpadé</h3><p>15 ans d'expérience, plus de 2 000 naissances accompagnées.</p></div></article>
+    <article class="card doc reveal d1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1666887360742-974c8fce8e6b?w=700&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="sp">Médecine générale</span><h3>Dr S. Hounkpè</h3><p>Spécialiste du suivi des maladies chroniques et des bilans de santé.</p></div></article>
+    <article class="card doc reveal d2"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1643297654416-05795d62e39c?w=700&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="sp">Pédiatrie</span><h3>Dr M. Adjovi</h3><p>Douce avec les enfants, rassurante avec les parents.</p></div></article>
+  </div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+  <div class="stats">
+    <div class="stat reveal"><div class="n" data-count="25000" data-suf="+">0</div><div class="l">patients soignés</div></div>
+    <div class="stat reveal d1"><div class="n" data-count="18">0</div><div class="l">médecins et sages-femmes</div></div>
+    <div class="stat reveal d2"><div class="n" data-count="24" data-suf=" h">0</div><div class="l">urgences, 7 jours sur 7</div></div>
+    <div class="stat reveal d3"><div class="n" data-count="3" data-suf=" h">0</div><div class="l">délai moyen des résultats</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Comment ça marche</span><h2>Votre rendez-vous en 3 étapes</h2></div>
+  <div class="steps" style="grid-template-columns:repeat(3,1fr)">
+    <div class="step reveal"><h3>Choisissez</h3><p>La spécialité, la date et le moment qui vous arrangent.</p></div>
+    <div class="step reveal d1"><h3>Confirmez</h3><p>Nous vous répondons sur WhatsApp avec l'heure exacte.</p></div>
+    <div class="step reveal d2"><h3>Venez</h3><p>Accueil prioritaire, pas de longue file d'attente.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Avis patients</span><h2>Ils nous ont fait confiance</h2></div>
+  <div class="quotes">
+    <div class="quote reveal"><div class="st">★★★★★</div><p>« J'ai accouché ici. Équipe très attentionnée, chambre propre et climatisée. Je recommande à toutes les mamans. »</p><div class="who"><span class="av">RS</span><div>Rachelle S.<small>maternité</small></div></div></div>
+    <div class="quote reveal d1"><div class="st">★★★★★</div><p>« Rendez-vous pris sur WhatsApp le matin, consultation l'après-midi et résultats le soir même. »</p><div class="who"><span class="av">BT</span><div>Bertrand T.<small>laboratoire</small></div></div></div>
+    <div class="quote reveal d2"><div class="st">★★★★★</div><p>« Le pédiatre a été formidable avec mon fils. On sent qu'ils aiment leur métier. »</p><div class="who"><span class="av">NA</span><div>Nadège A.<small>pédiatrie</small></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Questions fréquentes</span><h2>Bon à savoir</h2></div>
+  <div class="faq reveal">
+    <details><summary>Faut-il un rendez-vous pour consulter ?</summary><p>Ce n'est pas obligatoire, mais avec un rendez-vous vous passez en priorité. Les urgences sont reçues sans rendez-vous, 24 h/24.</p></details>
+    <details><summary>Acceptez-vous les assurances ?</summary><p>Oui, nous travaillons avec les principales assurances santé du Bénin. Présentez votre carte à l'accueil.</p></details>
+    <details><summary>Comment recevoir mes résultats d'analyses ?</summary><p>Vos résultats vous sont envoyés en PDF sur WhatsApp dès qu'ils sont prêts, ou remis en main propre à l'accueil.</p></details>
+    <details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Espèces, MTN MoMo, Moov Money et carte bancaire.</p></details>
+  </div>
+</div></section>
+
+<section id="urgences" style="padding-top:0"><div class="wrap">
+  <div class="band reveal">
+    <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1612276529418-52e6ad86ee1d?w=1600&q=75&auto=format&fit=crop)"></div>
+    <div><span class="eyebrow" style="color:var(--acc2)">Urgences 24 h/24</span><h2 style="margin-top:14px">Une urgence ? Nous sommes là, jour et nuit.</h2><p>Médecin de garde, ambulance et laboratoire disponibles en permanence.</p></div>
+    <div style="display:grid;gap:12px"><a href="tel:+2290100000000" class="btn urg" style="justify-content:center">📞 Appeler les urgences</a><a class="btn wa" style="justify-content:center" data-wa-msg="Bonjour Clinique Azalée, j'ai besoin d'un avis médical urgent.">💬 Écrire sur WhatsApp</a></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="logo"><span class="mk" style="border-radius:50%">✚</span>Clinique Azalée</div><p>Médecine générale, pédiatrie, maternité, laboratoire.<br>Haie Vive, Cotonou · Bénin</p></div>
+    <div><h4>Spécialités</h4><ul><li>Médecine générale</li><li>Pédiatrie</li><li>Maternité</li><li>Laboratoire</li></ul></div>
+    <div><h4>Contact</h4><ul><li>📞 01 00 00 00 00</li><li>🚑 Urgences 24 h/24</li><li>⏰ Consultations 7h – 21h</li></ul></div>
+    <div><h4>Suivez-nous</h4><ul><li>Facebook</li><li>TikTok</li><li>Instagram</li></ul></div>
+  </div>
+  <div class="legal"><span>© <span class="an"></span> Clinique Azalée · clinique fictive</span><span>Site de démonstration réalisé par ATLANTIK WEB</span></div>
+</div></footer>
+
+<a class="wa-float" aria-label="WhatsApp" data-wa-msg="Bonjour Clinique Azalée, je voudrais prendre rendez-vous."><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3 29l6.8-2.2c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.2 5 16 5s10.6 4.8 10.6 10.6S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+<script src="../premium/base.js"></script>
+</body>
+</html>

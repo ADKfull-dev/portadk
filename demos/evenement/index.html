@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Palais des Lumières · Salle de réception à Cotonou (démo)</title>
+<meta name="description" content="Démo ATLANTIK WEB : site premium de salle des fêtes et événementiel à Cotonou : espaces, formules, galerie, vérification de date sur WhatsApp.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1745573673235-5f2cee3ff9a8?w=1200&q=75&auto=format&fit=crop">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../premium/base.css">
+<style>
+:root{--fh:"Playfair Display",Georgia,serif;--fw:600;--ls:-.01em;--fb:"Jost",system-ui,sans-serif;--bg:#fbf7f1;--bg2:#f3ebdf;--ink:#1e1517;--mute:#6f6262;--acc:#b0814a;--acc2:#e8c992;--card:#fff;--line:#eadfce;--rcard:4px;--rbtn:0px;--rlogo:50%;--hero-grad:linear-gradient(180deg,#1e151766 0%,#1e151733 40%,#1e1517ee 100%)}
+.hero{justify-content:center;text-align:center;align-items:center}
+.hero h1{max-width:16ch;margin:18px auto 0;font-size:clamp(44px,7vw,92px)}
+.hero h1 em{color:var(--acc2)}
+.hero p.lead{margin-left:auto;margin-right:auto}
+.hero .ctas{justify-content:center}
+.hero .eyebrow{justify-content:center;color:var(--acc2)}
+.datebar{margin:40px auto 0;max-width:900px;background:#fffffff2;color:var(--ink);display:grid;grid-template-columns:1fr 1fr 1fr auto;text-align:left;box-shadow:0 30px 70px -30px #000c}
+.datebar .field{margin:0;padding:14px 18px;border-right:1px solid var(--line)}
+.datebar .field select,.datebar .field input{border:0;background:transparent;padding:4px 0;font-weight:600}
+.datebar .btn{height:100%;justify-content:center;padding:0 28px}
+.space .ph{aspect-ratio:4/5}
+.space .cap{font-family:var(--fh);font-size:20px;color:var(--acc)}
+.script{font-family:var(--fh);font-style:italic;color:var(--acc)}
+@media(max-width:720px){.datebar{grid-template-columns:1fr 1fr}.datebar .btn{grid-column:span 2;padding:16px}.datebar .field{border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body data-wa="2290142128262" data-nom="Le Palais des Lumières">
+<div class="demo-bar">Site de démonstration réalisé par <b>ATLANTIK WEB</b> · établissement fictif · photos Unsplash</div>
+
+<header class="top over"><div class="wrap in">
+  <a href="#" class="logo"><span class="mk" style="background:var(--acc)">✦</span>Le Palais des Lumières</a>
+  <nav class="menu"><a href="#espaces">Nos espaces</a><a href="#formules">Formules</a><a href="#galerie">Galerie</a><a href="#visite">Visiter</a></nav>
+  <a href="#date" class="btn cta-nav">Vérifier une date</a>
+  <button class="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<section class="hero">
+  <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1745573673235-5f2cee3ff9a8?w=2000&q=75&auto=format&fit=crop)"></div>
+  <div class="wrap reveal">
+    <span class="eyebrow">Mariages · anniversaires · galas · séminaires</span>
+    <h1>Le cadre de vos <em>plus beaux</em> souvenirs.</h1>
+    <p class="lead">Une salle climatisée de 800 places, un jardin éclairé et une équipe qui s'occupe de tout, de la décoration au traiteur, à Cadjèhoun.</p>
+    <form class="datebar" id="date" data-wa="je souhaite vérifier la disponibilité de la salle.">
+      <div class="field"><label>Événement</label><select data-label="Événement"><option>Mariage</option><option>Anniversaire</option><option>Baptême</option><option>Gala / soirée</option><option>Séminaire</option></select></div>
+      <div class="field"><label>Date</label><input type="date" required data-label="Date"></div>
+      <div class="field"><label>Invités</label><select data-label="Invités"><option>Moins de 150</option><option>150 à 300</option><option>300 à 500</option><option>500 à 800</option></select></div>
+      <button class="btn">Vérifier →</button>
+    </form>
+  </div>
+</section>
+
+<div class="trust"><div class="wrap in">
+  <span>❄️ Salle <b>climatisée</b></span><span>👥 Jusqu'à <b>800 invités</b></span><span>🚗 Parking <b>150 voitures</b></span><span>⚡ Groupe électrogène <b>silencieux</b></span>
+</div></div>
+
+<section id="espaces"><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Nos espaces</span><h2>Trois lieux, mille possibilités.</h2><p>Combinez nos espaces pour la cérémonie, le cocktail et la soirée, sans que vos invités aient à se déplacer.</p></div>
+  <div class="cards">
+    <article class="card space reveal"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1780337092586-ea9909597422?w=800&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="cap">Jusqu'à 800 invités</span><h3>La Grande Salle</h3><p>Plafond de 7 mètres, lustres en cristal, scène et piste de danse.</p></div></article>
+    <article class="card space reveal d1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1715592029240-81cb714785e1?w=800&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="cap">Jusqu'à 400 invités</span><h3>Le Jardin des Palmiers</h3><p>Pour vos cérémonies en plein air et vos cocktails au coucher du soleil.</p></div></article>
+    <article class="card space reveal d2"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1769812343338-12a591ef0317?w=800&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="cap">Jusqu'à 80 invités</span><h3>Le Salon Privé</h3><p>Dîners intimes, fiançailles et réunions d'affaires, en toute discrétion.</p></div></article>
+  </div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+  <div class="stats">
+    <div class="stat reveal"><div class="n" data-count="1200" data-suf="+">0</div><div class="l">événements célébrés</div></div>
+    <div class="stat reveal d1"><div class="n" data-count="800">0</div><div class="l">places assises</div></div>
+    <div class="stat reveal d2"><div class="n">4,9 ★</div><div class="l">note moyenne sur Google</div></div>
+    <div class="stat reveal d3"><div class="n" data-count="35">0</div><div class="l">prestataires partenaires</div></div>
+  </div>
+</div></section>
+
+<section id="formules"><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Nos formules</span><h2>Clés en main ou à la carte.</h2><p>Location de la salle seule ou formule complète avec décoration, traiteur et animation. Acompte de 30 % pour bloquer la date.</p></div>
+  <div class="plans">
+    <div class="plan reveal"><h3>Essentielle</h3><div class="amt">850 000 F</div><span class="mute" style="color:var(--mute)">jusqu'à 300 invités</span><ul><li>Salle climatisée</li><li>Tables, chaises et nappes</li><li>Sonorisation de base</li><li>Agents de sécurité</li></ul><a href="#date" class="btn ghost">Vérifier une date</a></div>
+    <div class="plan best reveal d1"><span class="eyebrow" style="color:var(--acc2)">La plus choisie</span><h3>Prestige</h3><div class="amt">2 500 000 F</div><span class="mute">jusqu'à 500 invités</span><ul><li>Tout l'Essentielle</li><li>Décoration florale</li><li>DJ et éclairage scène</li><li>Coordinatrice le jour J</li></ul><a href="#date" class="btn">Vérifier une date</a></div>
+    <div class="plan reveal d2"><h3>Royale</h3><div class="amt">Sur devis</div><span class="mute" style="color:var(--mute)">jusqu'à 800 invités</span><ul><li>Tout le Prestige</li><li>Traiteur & pièce montée</li><li>Photographe & vidéaste</li><li>Voitures de cortège</li></ul><a class="btn ghost" data-wa-msg="Bonjour Le Palais des Lumières, je voudrais un devis pour la formule Royale.">Demander un devis</a></div>
+  </div>
+</div></section>
+
+<section id="galerie" class="alt"><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Galerie</span><h2>Ils ont dit <span class="script">oui</span> chez nous</h2></div>
+  <div class="gallery reveal">
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1731471166075-0504e1c28f9c?w=1000&q=75&auto=format&fit=crop" alt=""></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1769812343338-12a591ef0317?w=600&q=75&auto=format&fit=crop" alt=""></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1675247488725-22d1b78e75db?w=600&q=75&auto=format&fit=crop" alt=""></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1715592029240-81cb714785e1?w=600&q=75&auto=format&fit=crop" alt=""></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1780337092586-ea9909597422?w=600&q=75&auto=format&fit=crop" alt=""></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1745573673235-5f2cee3ff9a8?w=600&q=75&auto=format&fit=crop" alt=""></figure>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Votre événement, étape par étape</span><h2>Nous nous occupons de tout</h2></div>
+  <div class="steps">
+    <div class="step reveal"><h3>Visite</h3><p>Découvrez les lieux avec notre coordinatrice, sur place ou en vidéo.</p></div>
+    <div class="step reveal d1"><h3>Réservation</h3><p>Acompte de 30 % pour bloquer votre date, contrat signé.</p></div>
+    <div class="step reveal d2"><h3>Préparation</h3><p>Plan de table, décoration, menu et dégustation avec le traiteur.</p></div>
+    <div class="step reveal d3"><h3>Le jour J</h3><p>Profitez : notre équipe orchestre chaque détail.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Témoignages</span><h2>Des moments inoubliables</h2></div>
+  <div class="quotes">
+    <div class="quote reveal"><div class="st">★★★★★</div><p>« Notre mariage de 450 invités s'est déroulé sans le moindre souci. La décoration était encore plus belle que sur les photos. »</p><div class="who"><span class="av">GM</span><div>Grâce & Marc<small>mariage, août 2025</small></div></div></div>
+    <div class="quote reveal d1"><div class="st">★★★★★</div><p>« Salle bien climatisée même en pleine saison chaude, et le groupe électrogène ne s'est jamais fait entendre. »</p><div class="who"><span class="av">DK</span><div>Didier K.<small>50 ans</small></div></div></div>
+    <div class="quote reveal d2"><div class="st">★★★★★</div><p>« Nous organisons notre gala annuel ici depuis 3 ans. Équipe professionnelle, toujours à l'écoute. »</p><div class="who"><span class="av">AB</span><div>Association B.<small>gala annuel</small></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Questions fréquentes</span><h2>Bon à savoir</h2></div>
+  <div class="faq reveal">
+    <details><summary>Combien de temps à l'avance faut-il réserver ?</summary><p>Pour un samedi de juin à décembre, comptez 6 à 9 mois. Pour les autres dates, 2 à 3 mois suffisent généralement.</p></details>
+    <details><summary>Peut-on venir avec son propre traiteur ?</summary><p>Oui, avec la formule Essentielle. Un droit de bouchon est appliqué pour les boissons apportées.</p></details>
+    <details><summary>Jusqu'à quelle heure peut-on rester ?</summary><p>Les soirées se terminent à 4h du matin. Une prolongation est possible sur demande.</p></details>
+  </div>
+</div></section>
+
+<section id="visite" style="padding-top:0"><div class="wrap">
+  <div class="band reveal">
+    <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1731471166075-0504e1c28f9c?w=1600&q=75&auto=format&fit=crop);background-position:center 30%"></div>
+    <div><span class="eyebrow" style="color:var(--acc2)">Visite privée</span><h2 style="margin-top:14px">Venez imaginer votre événement avec nous.</h2><p>Visite guidée de 30 minutes avec notre coordinatrice, du lundi au samedi.</p></div>
+    <form class="widget" data-wa="je souhaite visiter la salle.">
+      <div class="field"><label>Vos noms</label><input required data-label="Nom" placeholder="Ex. Grâce et Marc"></div>
+      <div class="row2"><div class="field"><label>Date de visite</label><input type="date" required data-label="Visite le"></div><div class="field"><label>Heure</label><select data-label="Heure"><option>10h</option><option>12h</option><option>15h</option><option>17h</option></select></div></div>
+      <button class="btn">Réserver la visite →</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="logo"><span class="mk" style="background:var(--acc)">✦</span>Le Palais des Lumières</div><p>Salle de réception et événementiel.<br>Cadjèhoun, Cotonou · Bénin</p></div>
+    <div><h4>Événements</h4><ul><li>Mariages</li><li>Anniversaires</li><li>Galas</li><li>Séminaires</li></ul></div>
+    <div><h4>Contact</h4><ul><li>📞 01 00 00 00 00</li><li>✉️ contact@palaisdeslumieres.bj</li><li>⏰ Visites lun – sam</li></ul></div>
+    <div><h4>Suivez-nous</h4><ul><li>Facebook</li><li>TikTok</li><li>Instagram</li></ul></div>
+  </div>
+  <div class="legal"><span>© <span class="an"></span> Le Palais des Lumières · établissement fictif</span><span>Site de démonstration réalisé par ATLANTIK WEB</span></div>
+</div></footer>
+
+<a class="wa-float" aria-label="WhatsApp" data-wa-msg="Bonjour Le Palais des Lumières, je voudrais des informations pour un événement."><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3 29l6.8-2.2c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.2 5 16 5s10.6 4.8 10.6 10.6S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+<script src="../premium/base.js"></script>
+</body>
+</html>

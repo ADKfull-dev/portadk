@@ -42,6 +42,7 @@
       e.preventDefault();
       const lignes = [...f.querySelectorAll("[data-label]")].filter(x => x.value).map(x => {
         let v = x.value; if (x.type === "date") v = new Date(v).toLocaleDateString("fr-FR");
+        if (x.type === "radio") v = (f.querySelector(`input[name="${x.name}"]:checked`) || x).value;
         return `${x.dataset.label} : ${v}`; });
       const msg = `Bonjour ${NOM}, ${f.dataset.wa}\n` + lignes.join("\n");
       open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");

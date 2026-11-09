@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alizé Cars · Location et vente de voitures à Cotonou (démo)</title>
+<meta name="description" content="Démo ATLANTIK WEB : site premium de location et vente de voitures à Cotonou : flotte filtrable, réservation WhatsApp, chauffeur, aéroport.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1670736297573-fde2cbcf1de7?w=1200&q=75&auto=format&fit=crop">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../premium/base.css">
+<style>
+:root{--fh:"Sora",system-ui,sans-serif;--fw:800;--ls:-.035em;--fb:"Inter",system-ui,sans-serif;--bg:#f5f5f4;--bg2:#ebeae7;--ink:#111111;--mute:#62615d;--acc:#ff5a1f;--acc2:#ff8a3d;--card:#fff;--line:#e2e1dd;--rcard:18px;--rbtn:12px;--hero-grad:linear-gradient(90deg,#000000f0 0%,#000000a0 45%,#00000022 100%)}
+.hero{align-items:center}
+.hero h1 span{color:var(--acc)}
+.car .ph{aspect-ratio:16/10;background:#e9e8e4}
+.car .price{font-family:var(--fh);font-size:26px;color:var(--ink)}
+.car .price small{font-size:14px;color:var(--mute);font-weight:600;font-family:var(--fb)}
+.car .tag{background:var(--ink);color:#fff}
+.spec{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--mute);font-weight:600}
+.car .go{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.car .go .btn{padding:11px 18px;font-size:14px}
+.mini{display:flex;gap:10px;margin-bottom:14px}
+.mini label{flex:1;text-align:center;border:1px solid var(--line);border-radius:10px;padding:10px;font-weight:700;font-size:14px;cursor:pointer}
+.mini input{display:none}.mini input:checked+span{color:var(--acc)}
+.mini label:has(input:checked){border-color:var(--acc);background:#ff5a1f10}
+</style>
+</head>
+<body data-wa="2290142128262" data-nom="Alizé Cars">
+<div class="demo-bar">Site de démonstration réalisé par <b>ATLANTIK WEB</b> · entreprise fictive · photos Unsplash</div>
+
+<header class="top over"><div class="wrap in">
+  <a href="#" class="logo"><span class="mk">A</span>ALIZÉ<span style="color:var(--acc)">CARS</span></a>
+  <nav class="menu"><a href="#flotte">Notre flotte</a><a href="#chauffeur">Avec chauffeur</a><a href="#vente">Véhicules à vendre</a><a href="#faq">Conditions</a></nav>
+  <a href="#reserver" class="btn cta-nav">Réserver</a>
+  <button class="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<section class="hero">
+  <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1670736297573-fde2cbcf1de7?w=2000&q=75&auto=format&fit=crop)"></div>
+  <div class="wrap"><div class="grid2" style="align-items:center">
+    <div class="reveal">
+      <span class="eyebrow">Location · chauffeur · vente</span>
+      <h1 style="margin-top:18px">La bonne voiture, <span>au bon prix.</span></h1>
+      <p class="lead">SUV, berlines et 4x4 récents, climatisés et assurés. Livraison à l'aéroport de Cotonou, à votre hôtel ou à domicile, 7 jours sur 7.</p>
+      <div class="ctas"><a href="#flotte" class="btn">Voir la flotte</a><a class="btn ghost" data-wa-msg="Bonjour Alizé Cars, je voudrais un devis de location.">Devis en 2 minutes</a></div>
+    </div>
+    <form class="widget reveal d2" id="reserver" data-wa="je souhaite réserver un véhicule.">
+      <h3>Réservez votre véhicule</h3>
+      <div class="mini"><label><input type="radio" name="t" value="Sans chauffeur" data-label="Formule" checked><span>Sans chauffeur</span></label><label><input type="radio" name="t" value="Avec chauffeur"><span>Avec chauffeur</span></label></div>
+      <div class="field"><label>Lieu de prise en charge</label><select data-label="Prise en charge"><option>Aéroport de Cotonou</option><option>Agence Cotonou centre</option><option>Livraison à domicile</option><option>Abomey-Calavi</option></select></div>
+      <div class="row2"><div class="field"><label>Départ</label><input type="date" required data-label="Départ"></div><div class="field"><label>Durée</label><select data-label="Durée"><option>1 jour</option><option>2 à 3 jours</option><option>1 semaine</option><option>1 mois et plus</option></select></div></div>
+      <div class="field"><label>Catégorie</label><select data-label="Catégorie"><option>SUV</option><option>Berline</option><option>4x4</option><option>Minibus</option><option>Prestige</option></select></div>
+      <button class="btn">Vérifier la disponibilité →</button>
+    </form>
+  </div></div>
+</section>
+
+<div class="trust"><div class="wrap in">
+  <span>🛡️ Assurance <b>tous risques</b></span><span>✈️ Livraison <b>aéroport</b></span><span>🔧 Assistance <b>24 h/24</b></span><span>💳 MoMo, Moov, <b>carte</b></span>
+</div></div>
+
+<section id="flotte"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Notre flotte</span><h2>Des véhicules récents, entretenus chaque semaine.</h2><p>Prix par jour, kilométrage illimité dans Cotonou. Caution remboursée au retour du véhicule.</p></div>
+  <div class="chips reveal" data-target="#cars"><button class="on" data-filter="tout">Tous</button><button data-filter="suv">SUV</button><button data-filter="4x4">4x4</button><button data-filter="berline">Berlines</button><button data-filter="prestige">Prestige</button></div>
+  <div class="cards" id="cars">
+    <article class="card car reveal" data-cat="4x4"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1603094539392-0d73239f4682?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">4x4</span></div><div class="bd"><h3>Toyota Land Cruiser Prado</h3><div class="spec"><span>👤 7 places</span><span>⚙️ Automatique</span><span>⛽ Diesel</span></div><div class="go"><div class="price">55 000 F <small>/ jour</small></div><a class="btn" data-wa-msg="Bonjour Alizé Cars, je souhaite réserver le Toyota Prado.">Réserver</a></div></div></article>
+    <article class="card car reveal d1" data-cat="suv"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1543412300-17ba2662de00?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">SUV</span></div><div class="bd"><h3>SUV familial climatisé</h3><div class="spec"><span>👤 5 places</span><span>⚙️ Automatique</span><span>⛽ Essence</span></div><div class="go"><div class="price">35 000 F <small>/ jour</small></div><a class="btn" data-wa-msg="Bonjour Alizé Cars, je souhaite réserver le SUV familial.">Réserver</a></div></div></article>
+    <article class="card car reveal d2" data-cat="berline"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1761177982711-6f6273fbf971?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">Berline</span></div><div class="bd"><h3>Berline confort</h3><div class="spec"><span>👤 5 places</span><span>⚙️ Automatique</span><span>❄️ Clim</span></div><div class="go"><div class="price">25 000 F <small>/ jour</small></div><a class="btn" data-wa-msg="Bonjour Alizé Cars, je souhaite réserver la berline confort.">Réserver</a></div></div></article>
+    <article class="card car reveal" data-cat="prestige 4x4"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1774697570626-b5f1c53da9a5?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">Prestige</span></div><div class="bd"><h3>Classe G · événements</h3><div class="spec"><span>👤 5 places</span><span>🎩 Avec chauffeur</span><span>💍 Mariages</span></div><div class="go"><div class="price">150 000 F <small>/ jour</small></div><a class="btn" data-wa-msg="Bonjour Alizé Cars, je souhaite réserver le véhicule de prestige pour un événement.">Réserver</a></div></div></article>
+    <article class="card car reveal d1" data-cat="suv 4x4"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">SUV</span></div><div class="bd"><h3>SUV 4x4 tout-terrain</h3><div class="spec"><span>👤 7 places</span><span>🛣️ Route du nord</span><span>⛽ Diesel</span></div><div class="go"><div class="price">45 000 F <small>/ jour</small></div><a class="btn" data-wa-msg="Bonjour Alizé Cars, je souhaite réserver le SUV 4x4.">Réserver</a></div></div></article>
+    <article class="card car reveal d2" data-cat="berline"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1670736297573-fde2cbcf1de7?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">Longue durée</span></div><div class="bd"><h3>Offre entreprise · au mois</h3><div class="spec"><span>📅 1 mois et +</span><span>🔧 Entretien inclus</span></div><div class="go"><div class="price">-25 % <small>sur le tarif jour</small></div><a class="btn" data-wa-msg="Bonjour Alizé Cars, je voudrais une offre de location longue durée pour mon entreprise.">Devis</a></div></div></article>
+  </div>
+</div></section>
+
+<section id="chauffeur" class="dark"><div class="wrap split">
+  <div class="img reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1774697570626-b5f1c53da9a5?w=1100&q=75&auto=format&fit=crop" alt="">
+    <div class="float"><span style="font-size:28px">🎩</span><div><b>Chauffeurs bilingues</b><br>français · anglais</div></div></div>
+  <div class="reveal d1"><span class="eyebrow">Avec chauffeur</span>
+    <h2 style="font-size:clamp(34px,4.4vw,58px);margin:16px 0">Laissez-vous conduire.</h2>
+    <p class="mute">Pour vos rendez-vous d'affaires, un mariage, un transfert aéroport ou une excursion à Ouidah et Ganvié : un chauffeur expérimenté, ponctuel et discret.</p>
+    <ul class="checks"><li><div><b>Transfert aéroport</b> — accueil avec pancarte, suivi de votre vol.</div></li><li><div><b>Mariages & cortèges</b> — véhicules décorés, coordination avec votre organisateur.</div></li><li><div><b>Excursions</b> — Ouidah, Grand-Popo, Abomey, Parc de la Pendjari.</div></li></ul>
+    <a class="btn" data-wa-msg="Bonjour Alizé Cars, je souhaite un véhicule avec chauffeur.">Demander un chauffeur</a></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="stats">
+    <div class="stat reveal"><div class="n" data-count="40" data-suf="+">0</div><div class="l">véhicules disponibles</div></div>
+    <div class="stat reveal d1"><div class="n" data-count="6500" data-suf="+">0</div><div class="l">locations réussies</div></div>
+    <div class="stat reveal d2"><div class="n" data-count="30" data-suf=" min">0</div><div class="l">pour une livraison à Cotonou</div></div>
+    <div class="stat reveal d3"><div class="n" data-count="24" data-suf=" h/24">0</div><div class="l">assistance routière</div></div>
+  </div>
+</div></section>
+
+<section id="vente" class="alt"><div class="wrap split">
+  <div class="reveal"><span class="eyebrow">Véhicules à vendre</span>
+    <h2 style="font-size:clamp(32px,4vw,52px);margin:16px 0">Des occasions d'Europe, vérifiées et garanties.</h2>
+    <p style="color:var(--mute)">Chaque véhicule passe un contrôle en 80 points. Dédouanement, carte grise et garantie de 3 mois inclus.</p>
+    <ul class="checks"><li><div>Historique et kilométrage vérifiés</div></li><li><div>Essai sur route avant achat</div></li><li><div>Paiement en plusieurs fois possible</div></li></ul>
+    <a class="btn" data-wa-msg="Bonjour Alizé Cars, je voudrais voir les véhicules disponibles à la vente.">Voir les véhicules à vendre</a></div>
+  <div class="img reveal d1"><img loading="lazy" src="https://images.unsplash.com/photo-1543412300-17ba2662de00?w=1100&q=75&auto=format&fit=crop" alt=""></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Avis clients</span><h2>Ils roulent avec nous</h2></div>
+  <div class="quotes">
+    <div class="quote reveal"><div class="st">★★★★★</div><p>« Voiture livrée à l'aéroport à minuit, propre et le plein fait. Parfait pour mon séjour d'affaires. »</p><div class="who"><span class="av">PL</span><div>Patrick L.<small>location 1 semaine</small></div></div></div>
+    <div class="quote reveal d1"><div class="st">★★★★★</div><p>« Trois véhicules avec chauffeurs pour notre mariage : ponctuels, élégants, tout le monde était impressionné. »</p><div class="who"><span class="av">EA</span><div>Estelle & Arnaud<small>mariage</small></div></div></div>
+    <div class="quote reveal d2"><div class="st">★★★★★</div><p>« Notre entreprise loue deux SUV au mois depuis un an. Entretien suivi, aucune mauvaise surprise. »</p><div class="who"><span class="av">BS</span><div>B. Services<small>contrat entreprise</small></div></div></div>
+  </div>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Conditions de location</span><h2>Simple et transparent</h2></div>
+  <div class="faq reveal">
+    <details><summary>Quels documents faut-il pour louer ?</summary><p>Une pièce d'identité et un permis de conduire valide depuis plus de 2 ans. Pour une location avec chauffeur, seule la pièce d'identité suffit.</p></details>
+    <details><summary>Quel est le montant de la caution ?</summary><p>De 100 000 à 300 000 F selon le véhicule, remboursée intégralement au retour.</p></details>
+    <details><summary>Le carburant est-il inclus ?</summary><p>Le véhicule est livré avec le plein et doit être rendu avec le plein. Avec chauffeur, nous proposons un forfait carburant.</p></details>
+    <details><summary>Puis-je sortir du Bénin avec le véhicule ?</summary><p>Oui, vers le Togo et le Nigeria, avec une autorisation et une assurance complémentaire à demander lors de la réservation.</p></details>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="band reveal">
+    <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1603094539392-0d73239f4682?w=1600&q=75&auto=format&fit=crop)"></div>
+    <div><span class="eyebrow">Prêt à partir ?</span><h2 style="margin-top:14px">Votre véhicule livré en 30 minutes à Cotonou.</h2><p>Réservez en quelques clics sur WhatsApp, nous confirmons immédiatement.</p></div>
+    <div style="display:grid;gap:12px"><a href="#reserver" class="btn" style="justify-content:center">Réserver maintenant</a><a class="btn wa" style="justify-content:center" data-wa-msg="Bonjour Alizé Cars, je voudrais réserver un véhicule.">💬 WhatsApp</a></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="logo"><span class="mk">A</span>ALIZÉ CARS</div><p>Location, chauffeur et vente de véhicules.<br>Cotonou · Aéroport · Abomey-Calavi</p></div>
+    <div><h4>Services</h4><ul><li>Location courte durée</li><li>Longue durée entreprise</li><li>Avec chauffeur</li><li>Vente d'occasion</li></ul></div>
+    <div><h4>Contact</h4><ul><li>📞 01 00 00 00 00</li><li>✈️ Livraison aéroport 24 h/24</li><li>⏰ Agence 7h – 21h</li></ul></div>
+    <div><h4>Suivez-nous</h4><ul><li>Facebook</li><li>TikTok</li><li>Instagram</li></ul></div>
+  </div>
+  <div class="legal"><span>© <span class="an"></span> Alizé Cars · entreprise fictive</span><span>Site de démonstration réalisé par ATLANTIK WEB</span></div>
+</div></footer>
+
+<a class="wa-float" aria-label="WhatsApp" data-wa-msg="Bonjour Alizé Cars, je voudrais louer un véhicule."><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3 29l6.8-2.2c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.2 5 16 5s10.6 4.8 10.6 10.6S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+<script src="../premium/base.js"></script>
+</body>
+</html>

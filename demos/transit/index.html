@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlantis Express · Colis, fret et voyages depuis Cotonou (démo)</title>
+<meta name="description" content="Démo ATLANTIK WEB : site premium de transit et d'envoi de colis Bénin – Europe – Chine – Canada : calculateur de prix, suivi de colis, billets et visas.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1775449053619-89b5265f611a?w=1200&q=75&auto=format&fit=crop">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../premium/base.css">
+<style>
+:root{--fh:"Outfit",system-ui,sans-serif;--fw:700;--ls:-.03em;--fb:"Inter",system-ui,sans-serif;--bg:#f4f7fb;--bg2:#e9eef6;--ink:#0a1630;--mute:#5b6780;--acc:#1f5eff;--acc2:#ffb020;--card:#fff;--line:#dde4ef;--rcard:20px;--rbtn:14px;--hero-grad:linear-gradient(90deg,#0a1630f2 0%,#0a1630a8 50%,#0a163022 100%)}
+.hero{align-items:center}
+.hero h1 span{color:var(--acc2)}
+.est{margin-top:4px;padding:16px;border-radius:14px;background:var(--bg2);display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.est b{font-family:var(--fh);font-size:28px;color:var(--acc)}
+.est small{color:var(--mute);font-size:13px;display:block}
+.dest .ph{aspect-ratio:16/10}
+.dest .fl{font-size:30px}
+.track{display:flex;gap:10px;max-width:560px;margin-top:26px}
+.track input{flex:1;padding:16px;border-radius:14px;border:0;font:inherit}
+.tabs2{display:flex;gap:6px;margin-bottom:14px;background:var(--bg2);padding:5px;border-radius:12px}
+.tabs2 button{flex:1;border:0;background:transparent;padding:10px;border-radius:9px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;color:var(--mute)}
+.tabs2 button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px #0001}
+@media(max-width:720px){.track{flex-direction:column}}
+</style>
+</head>
+<body data-wa="2290142128262" data-nom="Atlantis Express">
+<div class="demo-bar">Site de démonstration réalisé par <b>ATLANTIK WEB</b> · entreprise fictive · photos Unsplash</div>
+
+<header class="top over"><div class="wrap in">
+  <a href="#" class="logo"><span class="mk">➶</span>Atlantis<span style="color:var(--acc2)">Express</span></a>
+  <nav class="menu"><a href="#tarifs">Tarifs</a><a href="#services">Services</a><a href="#suivi">Suivre un colis</a><a href="#voyages">Billets & visas</a></nav>
+  <a href="#calcul" class="btn cta-nav">Calculer un envoi</a>
+  <button class="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<section class="hero">
+  <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1775449053619-89b5265f611a?w=2000&q=75&auto=format&fit=crop)"></div>
+  <div class="wrap"><div class="grid2" style="align-items:center">
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--acc2)">Bénin ⇄ Europe · Canada · Chine · Dubaï</span>
+      <h1 style="margin-top:18px">Vos colis arrivent. <span>À temps.</span></h1>
+      <p class="lead">Fret aérien en 5 à 7 jours, maritime en 30 jours, dédouanement inclus. Ramassage à domicile à Cotonou et suivi en temps réel sur WhatsApp.</p>
+      <div class="ctas"><a href="#calcul" class="btn">Calculer mon envoi</a><a href="#suivi" class="btn ghost">Suivre un colis</a></div>
+    </div>
+    <form class="widget reveal d2" id="calcul" data-wa="je souhaite envoyer un colis.">
+      <h3>Estimez votre envoi</h3>
+      <div class="tabs2" id="mode"><button type="button" class="on" data-m="air">✈️ Aérien</button><button type="button" data-m="mer">🚢 Maritime</button></div>
+      <input type="hidden" id="modeval" value="Aérien" data-label="Mode">
+      <div class="row2"><div class="field"><label>Trajet</label><select id="route" data-label="Trajet"><option value="fr">Cotonou → France</option><option value="be">Cotonou → Belgique</option><option value="ca">Cotonou → Canada</option><option value="cn">Chine → Cotonou</option><option value="ae">Dubaï → Cotonou</option></select></div>
+      <div class="field"><label>Poids (kg)</label><input id="kg" type="number" min="1" value="10" data-label="Poids (kg)"></div></div>
+      <div class="est"><div><small>Estimation</small><b id="prix">—</b></div><div style="text-align:right"><small>Délai</small><strong id="delai">—</strong></div></div>
+      <div class="field"><label>Votre nom</label><input required data-label="Nom" placeholder="Ex. Mme Akpovi"></div>
+      <button class="btn">Confirmer sur WhatsApp →</button>
+    </form>
+  </div></div>
+</section>
+
+<div class="trust"><div class="wrap in">
+  <span>📦 Ramassage <b>à domicile</b></span><span>🛃 Dédouanement <b>inclus</b></span><span>📍 Suivi <b>en temps réel</b></span><span>🛡️ Colis <b>assurés</b></span>
+</div></div>
+
+<section id="tarifs"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Nos destinations</span><h2>Des tarifs clairs, au kilo.</h2><p>Prix tout compris pour le fret aérien, hors objets de valeur. Départs chaque semaine.</p></div>
+  <div class="cards">
+    <article class="card dest reveal"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1767868280782-fc108d087050?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">Départ mardi & vendredi</span></div><div class="bd"><span class="fl">🇫🇷</span><h3>France · Paris</h3><p>Livraison à domicile dans toute la France métropolitaine.</p><div class="meta"><span class="price">7 500 F / kg</span><span>⏱ 5 – 7 jours</span></div></div></article>
+    <article class="card dest reveal d1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1752901565565-88691e3cbbff?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">Départ jeudi</span></div><div class="bd"><span class="fl">🇨🇦</span><h3>Canada · Montréal</h3><p>Point relais à Montréal, livraison possible à Québec et Ottawa.</p><div class="meta"><span class="price">11 000 F / kg</span><span>⏱ 7 – 10 jours</span></div></div></article>
+    <article class="card dest reveal d2"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1766930465270-b3639a040051?w=800&q=75&auto=format&fit=crop" alt=""><span class="tag">Groupage maritime</span></div><div class="bd"><span class="fl">🇨🇳</span><h3>Chine → Cotonou</h3><p>Achat, contrôle qualité et groupage depuis Guangzhou et Yiwu.</p><div class="meta"><span class="price">dès 4 500 F / kg</span><span>⏱ 10 j aérien · 35 j mer</span></div></div></article>
+  </div>
+</div></section>
+
+<section id="suivi" class="dark"><div class="wrap split">
+  <div class="reveal"><span class="eyebrow" style="color:var(--acc2)">Suivi de colis</span>
+    <h2 style="font-size:clamp(34px,4.4vw,58px);margin:16px 0">Où est mon colis ?</h2>
+    <p class="mute">Entrez votre numéro de suivi : nous vous répondons immédiatement sur WhatsApp avec la position de votre colis et la date de livraison prévue.</p>
+    <form class="track" data-wa="je souhaite suivre mon colis."><input required data-label="N° de suivi" placeholder="Ex. ATX-2026-00451"><button class="btn">Suivre →</button></form></div>
+  <div class="img reveal d1"><img loading="lazy" src="https://images.unsplash.com/photo-1767868280782-fc108d087050?w=1100&q=75&auto=format&fit=crop" alt="">
+    <div class="float"><span style="font-size:28px">📍</span><div><b>Colis ATX-00451</b><br>Arrivé à Paris CDG · livraison demain</div></div></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Nos services</span><h2>Tout pour vos envois et vos voyages.</h2></div>
+  <div class="cards">
+    <div class="icard reveal"><div class="ic">✈️</div><h3>Fret aérien</h3><p>Colis, documents, produits alimentaires conditionnés : départs chaque semaine.</p></div>
+    <div class="icard reveal d1"><div class="ic">🚢</div><h3>Fret maritime</h3><p>Groupage et conteneurs complets, véhicules et marchandises en gros.</p></div>
+    <div class="icard reveal d2"><div class="ic">🛃</div><h3>Dédouanement</h3><p>Formalités au port et à l'aéroport de Cotonou gérées par nos déclarants agréés.</p></div>
+    <div class="icard reveal"><div class="ic">🛒</div><h3>Achats en ligne</h3><p>Commandez sur Amazon, Shein ou Alibaba : nous recevons et livrons au Bénin.</p></div>
+    <div class="icard reveal d1" id="voyages"><div class="ic">🎫</div><h3>Billets d'avion</h3><p>Les meilleurs tarifs vers Paris, Bruxelles, Dubaï et Montréal, paiement MoMo.</p></div>
+    <div class="icard reveal d2"><div class="ic">🛂</div><h3>Assistance visa</h3><p>Constitution du dossier, prise de rendez-vous et réservation d'hôtel.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="stats">
+    <div class="stat reveal"><div class="n" data-count="48000" data-suf="+">0</div><div class="l">colis livrés</div></div>
+    <div class="stat reveal d1"><div class="n" data-count="99" data-suf="%">0</div><div class="l">arrivés sans dommage</div></div>
+    <div class="stat reveal d2"><div class="n" data-count="2">0</div><div class="l">départs aériens par semaine</div></div>
+    <div class="stat reveal d3"><div class="n" data-count="9">0</div><div class="l">ans d'expérience</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Comment ça marche</span><h2>Envoyer un colis en 4 étapes</h2></div>
+  <div class="steps">
+    <div class="step reveal"><h3>Estimez</h3><p>Calculez le prix en ligne ou envoyez-nous une photo du colis.</p></div>
+    <div class="step reveal d1"><h3>Déposez</h3><p>À notre agence ou ramassage gratuit à domicile dès 10 kg.</p></div>
+    <div class="step reveal d2"><h3>Suivez</h3><p>Numéro de suivi et notifications WhatsApp à chaque étape.</p></div>
+    <div class="step reveal d3"><h3>Recevez</h3><p>Livraison à domicile ou retrait en point relais.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Avis clients</span><h2>Ils nous confient leurs colis</h2></div>
+  <div class="quotes">
+    <div class="quote reveal"><div class="st">★★★★★</div><p>« J'envoie des produits locaux à ma fille à Paris chaque mois. Toujours arrivés en moins d'une semaine. »</p><div class="who"><span class="av">CH</span><div>Céline H.<small>envois réguliers</small></div></div></div>
+    <div class="quote reveal d1"><div class="st">★★★★★</div><p>« Ils ont géré l'achat et le transport de ma marchandise depuis la Chine. Contrôle qualité sérieux. »</p><div class="who"><span class="av">IO</span><div>Ismaël O.<small>commerçant, Dantokpa</small></div></div></div>
+    <div class="quote reveal d2"><div class="st">★★★★★</div><p>« Billet et dossier de visa pour Dubaï organisés en une semaine. Très réactifs sur WhatsApp. »</p><div class="who"><span class="av">RA</span><div>Rodrigue A.<small>voyage d'affaires</small></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head center reveal"><span class="eyebrow">Questions fréquentes</span><h2>Avant d'envoyer</h2></div>
+  <div class="faq reveal">
+    <details><summary>Quels objets sont interdits ?</summary><p>Liquides inflammables, batteries seules, argent liquide, produits contrefaits et denrées périssables non conditionnées. Demandez-nous en cas de doute.</p></details>
+    <details><summary>Comment emballer mon colis ?</summary><p>Carton solide, objets fragiles protégés. Nous proposons aussi un service d'emballage renforcé à l'agence.</p></details>
+    <details><summary>Mon colis est-il assuré ?</summary><p>Oui, chaque colis est assuré jusqu'à 100 000 F. Une assurance complémentaire est possible pour les objets de valeur.</p></details>
+    <details><summary>Comment payer ?</summary><p>Espèces, MTN MoMo, Moov Money ou virement. Pour les envois vers le Bénin, paiement possible par le destinataire.</p></details>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="band reveal">
+    <div class="bg" style="background-image:url(https://images.unsplash.com/photo-1769273746841-4a205acb0be4?w=1600&q=75&auto=format&fit=crop)"></div>
+    <div><span class="eyebrow" style="color:var(--acc2)">Prochain départ aérien</span><h2 style="margin-top:14px">Déposez votre colis avant vendredi 12h.</h2><p>Ramassage gratuit à domicile à Cotonou et Calavi à partir de 10 kg.</p></div>
+    <div style="display:grid;gap:12px"><a href="#calcul" class="btn" style="justify-content:center">Calculer mon envoi</a><a class="btn wa" style="justify-content:center" data-wa-msg="Bonjour Atlantis Express, je voudrais organiser un ramassage de colis.">💬 Demander un ramassage</a></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="logo"><span class="mk">➶</span>Atlantis Express</div><p>Fret aérien et maritime, colis, billets et visas.<br>Ganhi, Cotonou · Bénin</p></div>
+    <div><h4>Envois</h4><ul><li>France & Belgique</li><li>Canada</li><li>Chine & Dubaï</li><li>Achats en ligne</li></ul></div>
+    <div><h4>Contact</h4><ul><li>📞 01 00 00 00 00</li><li>✉️ contact@atlantis-express.bj</li><li>⏰ Lun – Sam · 8h – 19h</li></ul></div>
+    <div><h4>Suivez-nous</h4><ul><li>Facebook</li><li>TikTok</li><li>Instagram</li></ul></div>
+  </div>
+  <div class="legal"><span>© <span class="an"></span> Atlantis Express · entreprise fictive</span><span>Site de démonstration réalisé par ATLANTIK WEB</span></div>
+</div></footer>
+
+<a class="wa-float" aria-label="WhatsApp" data-wa-msg="Bonjour Atlantis Express, je voudrais envoyer un colis."><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3 29l6.8-2.2c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.2 5 16 5s10.6 4.8 10.6 10.6S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+<script src="../premium/base.js"></script>
+<script>
+// calculateur indicatif
+const T = { air:{fr:[7500,"5 – 7 jours"],be:[7800,"5 – 7 jours"],ca:[11000,"7 – 10 jours"],cn:[9000,"8 – 12 jours"],ae:[6500,"5 – 8 jours"]},
+            mer:{fr:[2500,"30 – 40 jours"],be:[2600,"30 – 40 jours"],ca:[4000,"40 – 50 jours"],cn:[4500,"35 – 45 jours"],ae:[3000,"25 – 35 jours"]} };
+let mode = "air";
+const majPrix = () => { const [p,d] = T[mode][route.value], k = Math.max(1, +kg.value || 1);
+  prix.textContent = (p*k).toLocaleString("fr-FR").replace(/ /g," ") + " F"; delai.textContent = d; };
+document.getElementById("mode").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return;
+  mode = b.dataset.m; modeval.value = mode === "air" ? "Aérien" : "Maritime";
+  document.querySelectorAll("#mode button").forEach(x => x.classList.toggle("on", x === b)); majPrix(); });
+route.addEventListener("change", majPrix); kg.addEventListener("input", majPrix); majPrix();
+</script>
+</body>
+</html>
